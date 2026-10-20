@@ -1,0 +1,21 @@
+{
+  "name": "Diseno de Sistemas (USFQ)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt && echo '--- Verificacion de ambiente ---' && python --version && docker --version && pytest --version && echo 'Ambiente listo.'",
+  "remoteUser": "vscode"
+}
