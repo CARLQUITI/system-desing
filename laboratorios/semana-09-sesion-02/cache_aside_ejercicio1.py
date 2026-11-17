@@ -31,7 +31,7 @@ class ServicioConCacheAside:
         self.fallos = 0
 
     def disponibilidad(self, cancha, fecha):
-        clave = [ cancha, fecha]
+        clave = (cancha, fecha)
         
         if clave in self.cache:
             self.aciertos +=1
